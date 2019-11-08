@@ -14,9 +14,12 @@
       <div class="jumbotron">
         <h1>tre's pizza shop</h1>
       </div>
-                            <!-- Add Navagation Bar here on underside of jumbotron -->
 
-      <div class="row">                <!-- Beginning of row for 3 images in each column -->
+<!-- Add Navagation Bar here on underside of jumbotron -->
+
+<!-- Beginning of row for 3 images in each column -->
+
+      <div class="row">
         <div class="col-md-4">
           <img src="" alt="">
         </div>
@@ -30,28 +33,35 @@
         </div>
       </div>
 
+<!-- Row 2 Beginning -->
+
       <div class="row">
         <div class="col-md-4">
-          <select id="sizes" class="" name="">
-            <option value="Choose Your Size"></option>  <!-- Change ? Looking for default value -->
+          <h3>Choose pizza Size:</h3>
+          <select id="sizes" class="form-control" name="">
+            <option value="">CHOOSE YOUR PIZZA SIZE HERE</option>
             <option value="">Small $8.99</option>
             <option value="">Medium $12.99</option>
             <<option value="">Large $15.99</option>
           </select>
         </div>
         <div class="col-md-4">
-          <select id="toppings" class="form-control" name="">
-            <option value="">Pepperoni</option>
-            <option value="">Canadian Bacon</option>
-            <option value="">Sausage</option>
-            <option value="">Tomatoes</option>
-            <option value="">Onions</option>
-            <option value="">Mushroom</option>
-            <option value="">Olives</option>
-            <option value="">Pineapple</option>
-          </select>
+          <h3>Choose your toppings:</h3>
+          <form id="toppings" class="" action="index.html" method="post">
+            <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
+            <input type="checkbox" name="topping" value="Canadian Bacon">Canadian Bacon<br>
+            <input type="checkbox" name="topping" value="Sausage">Sausage<br>
+            <input type="checkbox" name="topping" value="Tomatoes">Tomatoes<br>
+            <input type="checkbox" name="topping" value="Onions">Onions<br>
+            <input type="checkbox" name="topping" value="Mushrooms">Mushrooms<br>
+            <input type="checkbox" name="topping" value="Olives">Olives<br>
+
+            <button type="submit" name="button">Done with Toppings</button>
+          </form>
         </div>
       </div>
+
+<!-- Row 3 Beginning -->
 
     </div>
   </body>
