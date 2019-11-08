@@ -15,8 +15,6 @@
         <h1>tre's pizza shop</h1>
       </div>
 
-<!-- Add Navagation Bar here on underside of jumbotron -->
-
 <!-- Beginning of row for 3 images in each column -->
 
       <div class="row">
@@ -35,33 +33,29 @@
 
 <!-- Row 2 Beginning -->
 
-      <div class="row">
-        <div class="col-md-4">
-          <h3>Choose pizza Size:</h3>
-          <select id="sizes" class="form-control" name="">
-            <option value="">CHOOSE YOUR PIZZA SIZE HERE</option>
-            <option value="small">Small $8.99</option>
-            <option value="medium">Medium $11.99</option>
-            <<option value="large">Large $15.99</option>
-          </select>
-        </div>
+      <form id="toppings" class="" action="index.html" method="post">
+
+        <h3>Choose pizza Size:</h3>
+        <select id="sizes" class="form-control" name="">
+          <option value="small">Small $8.99</option>
+          <option value="medium">Medium $11.99</option>
+          <<option value="large">Large $15.99</option>
+        </select>
+
+        <h3>Extra Toppings $1.00 Each:</h3>
+        <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
+        <input type="checkbox" name="topping" value="Canadian Bacon">Canadian Bacon<br>
+        <input type="checkbox" name="topping" value="Sausage">Sausage<br>
+        <input type="checkbox" name="topping" value="Tomatoes">Tomatoes<br>
+        <input type="checkbox" name="topping" value="Onions">Onions<br>
+        <input type="checkbox" name="topping" value="Mushrooms">Mushrooms<br>
+        <input type="checkbox" name="topping" value="Olives">Olives<br>
+
+        <button id="order-now" type="submit" name="button">Order Now</button>
+
+      </form>
 
 
-        <div class="col-md-4">
-          <h3>Choose your toppings:</h3>
-          <form id="toppings" class="" action="index.html" method="post">
-            <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
-            <input type="checkbox" name="topping" value="Canadian Bacon">Canadian Bacon<br>
-            <input type="checkbox" name="topping" value="Sausage">Sausage<br>
-            <input type="checkbox" name="topping" value="Tomatoes">Tomatoes<br>
-            <input type="checkbox" name="topping" value="Onions">Onions<br>
-            <input type="checkbox" name="topping" value="Mushrooms">Mushrooms<br>
-            <input type="checkbox" name="topping" value="Olives">Olives<br>
-
-            <button type="submit" name="button">Done with Toppings</button>
-          </form>
-        </div>
-      </div>
 
 <!-- Row 3 Beginning -->
 
@@ -73,7 +67,7 @@
         <h4>Grand Total: <span id="grand-total"></span></h4>
       </div>
 
-      <button id="order-now" type="button" name="button">Order now</button>
+
 
     </div>
   </body>

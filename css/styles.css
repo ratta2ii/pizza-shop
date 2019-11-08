@@ -1,3 +1,12 @@
 body {
   background-color: cornflowerblue;
 }
+
+#order-now {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#receipt-div {
+  display: none; 
+}
