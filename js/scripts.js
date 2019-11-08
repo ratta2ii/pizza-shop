@@ -19,11 +19,26 @@ Pizza.prototype.calculateTaxes = function(total){
   return "$" + Math.round(taxes) + ".00";
 }
 
-Pizzza.prototype.addToppings = function(array){
+Pizza.prototype.addToppings = function(array){
   for (let i in array){
     if (array[i].name === "topping"){
         toppingsArray.push(array[i].value);
     }
+  }
+}
+
+Pizza.prototype.pizzaPrice = function(pizzaSize){
+  if (pizzaSize === "small"){
+    grandTotal += 8.99;
+    return 8.99;
+  }
+  if (pizzaSize === "medium"){
+    grandTotal += 11.99;
+    return 11.99;
+  }
+  if (pizzaSize === "large"){
+    grandTotal += 15.99;
+    return 15.99
   }
 }
 
@@ -48,13 +63,16 @@ $(document).ready(function(){
   $("form#toppings").submit(function(event) {
     event.preventDefault();
 
+    let pizzaSize = $("#sizes").val();
+    newPizza(pizzaSize);
+
     let allCheckedValues = $("input:checkbox[name=topping]:checked");
     newPizza.addToppings();
 
 
 
 
-    addToppings();
+    newPizza.addToppings();
 
     console.log(toppingsArray);
   });
@@ -66,6 +84,6 @@ $(document).ready(function(){
     $("#taxes").text(newPizza.calculateTaxes(32));  // Update changes
   })
 
-  let newPizza = new Pizza("Large", toppingsArray, 12.99)   // Update cahnge
+  let newPizza = new Pizza(pizzaSize, toppingsArray, 12.99)   // Update cahnge
 
 });
