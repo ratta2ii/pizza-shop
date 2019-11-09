@@ -1,5 +1,5 @@
 body {
-  background-color: cornflowerblue;
+  background-color: #FF8C69;
 }
 
 #order-now {
@@ -8,5 +8,24 @@ body {
 }
 
 #receipt-div {
-  display: none; 
+  display: none;
+}
+
+img {
+  width: 100%;
+}
+
+.well {
+  width: 45%;
+  height: 250px;
+  margin: 2.5%;
+}
+
+button {
+  margin-left: 44%;
+  font-size: 25px;
+  border-radius: 5px;
+  background-color: green;
+  color: ghostWhite;
+  padding: 8px;
 }
