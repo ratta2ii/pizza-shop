@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/jquery-3.4.1.js" charset="utf-8"></script>
@@ -9,34 +10,18 @@
     <title>Pizza Shop Project</title>
   </head>
   <body>
-    <div class="container">
 
-      <div class="jumbotron">
-        <h1>tre's pizza shop</h1>
-      </div>
-
-<!-- Beginning of row for 3 images in each column -->
+    <div class="container container-add-ons">
 
       <div class="row">
-        <div class="col-md-4">
-          <img src="img/bread-sticks.jpg" alt="">
-        </div>
-
-        <div class="col-md-4">
-          <img src="img/pizza.jpg" alt="">
-        </div>
-
-        <div class="col-md-4">
-          <img src="img/salad.jpg" alt="">
+        <div class="col-md-12 title-container">
+          <h1>PIZZA SHOP</h1>
         </div>
       </div>
-
-<!-- Row 2 Beginning -->
 
       <form id="toppings" class="" action="index.html" method="post">
         <div class="row">
-
-          <div class="col-md-6 well">
+          <div class="col-md-6">
             <h3>Choose pizza Size:</h3>
             <select id="sizes" class="form-control" name="">
               <option value="small">Small $8.99</option>
@@ -45,8 +30,8 @@
             </select>
           </div>
 
-          <div class="col-md-6 well">
-            <h3>Extra Toppings $1.00 Each:</h3>
+          <div class="col-md-6 toppings-col">
+            <h3>Extra Toppings $0.99 Each:</h3>
             <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
             <input type="checkbox" name="topping" value="Canadian Bacon">Canadian Bacon<br>
             <input type="checkbox" name="topping" value="Sausage">Sausage<br>
@@ -55,23 +40,32 @@
             <input type="checkbox" name="topping" value="Mushrooms">Mushrooms<br>
             <input type="checkbox" name="topping" value="Olives">Olives<br>
           </div>
-
         </div>
 
         <button id="order-now" type="submit" name="button">Order Now</button>
-
       </form>
 
-<!-- Row 3 Beginning -->
+      <div id="receipt-div" class="row">
+        <div class="col-md-6">
+          <div class="order-items">
+            <h2>Your order:</h2>
+            <ul id="list-items">
+            </ul>
+          </div>
+        </div>
 
-      <div id="receipt-div" class="well">
-        <h2>Receipt:</h2>
-        <h5>Pizza: <span id="pizza-price"></span></h5>
-        <h5>Extra Toppings: <span id="toppings-price"></span></h5>
-        <h5>Taxes: <span id="taxes"></span></h5>
-        <h4>Grand Total: <span id="grand-total"></span></h4>
+        <div class="col-md-6">
+          <div class="well">
+            <h2>Receipt:</h2>
+            <h5>Pizza: <span id="pizza-price"></span></h5>
+            <h5>Extra Toppings: <span id="toppings-price"></span></h5>
+            <h5>Taxes: <span id="taxes"></span></h5>
+            <h4>Grand Total: $<span id="grand-total"></span></h4>
+            <button id="change-order" type="button" name="button">Change Order</button>
+          </div>
+        </div>
+
       </div>
-
     </div>
   </body>
 </html>

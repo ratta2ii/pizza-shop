@@ -7,15 +7,16 @@ function Pizza(size, price, toppings){
 }
 
 Pizza.prototype.calculateToppingsCosts = function(toppingsCount){
-  let toppingsTotal = toppingsCount * 1;
+  let toppingsTotal = toppingsCount * 0.99;
   grandTotal += toppingsTotal;
-  return "$" + toppingsTotal.toString() + ".00";
+  toppingsTotal = toppingsTotal.toFixed(2);
+  return "$" + toppingsTotal.toString();
 }
 
 Pizza.prototype.calculateTaxes = function(total){
-  let taxes = total * .1;
+  let taxes = total * .12;
   grandTotal += taxes;
-  return "$" + Math.round(taxes) + ".00";
+  return "$" + taxes.toFixed(2);
 }
 
 let pizzaCost = function(pizzaSize){
@@ -47,13 +48,14 @@ let toppingsCount = toppingsArray.length;
 let grandTotal = 0;
 
 
+
 // UI Logic ----------------------
 
 $(document).ready(function(){
 
   $("form#toppings").submit(function(event) {
-
     event.preventDefault();
+    $("form#toppings").hide();
 
     let pizzaSize = $("#sizes").val();
     let allCheckedValues = $("input:checkbox[name=topping]:checked");
@@ -66,12 +68,23 @@ $(document).ready(function(){
     $("#pizza-price").text(pizzaPrice);
     $("#toppings-price").text(newPizza.calculateToppingsCosts(toppingsCount));
     $("#taxes").text(newPizza.calculateTaxes(grandTotal));
-    $("#grand-total").text(grandTotal);
+    $("#grand-total").text(grandTotal.toFixed(2));
     $("#receipt-div").show();
+
+    $("ul#list-items").append("<li>One " + pizzaSize + " pizza</li>");
+    toppingsArray.forEach(function(topping){
+      $("ul#list-items").append("<li>" + topping + " topping</li>");
+    });
 
     toppingsArray = [];
     grandTotal = 0;
 
+  });
+
+  $("button#change-order").click(function(){
+    $("ul#list-items").empty();
+    $("form#toppings").show();
+    $("#receipt-div").hide();
   });
 
 });
