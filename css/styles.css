@@ -17,7 +17,7 @@ body {
   width: 60%;
   border-radius: 40px;
   padding: 50px;
-  border: 10px solid #D2A26E;
+  border: 8px solid green;
 }
 
 h1 {
@@ -57,7 +57,7 @@ button#order-now {
   margin-bottom: 25px;
   font-size: 20px;
   border-radius: 5px;
-  background-color: green;
+  background-color: #B73239;
   color: ghostWhite;
   padding: 8px 12px;
 }
@@ -66,7 +66,7 @@ button#change-order {
   margin: 35px 0 0 0;
   font-size: 15px;
   border-radius: 5px;
-  background-color: green;
+  background-color: #B73239;
   color: ghostWhite;
   padding: 8px 12px;
 }
